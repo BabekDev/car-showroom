@@ -1,0 +1,17 @@
+.search_line {
+    margin-top: 20px;
+    background-color: #252525;
+    width: 100%;
+    max-width: 720px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    .search_field {
+        width: 89%;
+    }
+    .btn {
+        width: 11%;
+        flex-wrap: wrap;
+        height: 100%;
+    }
+}

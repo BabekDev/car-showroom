@@ -1,16 +1,18 @@
 import styles from "./CarCard.module.scss";
 import { CarCardProps } from "./CarCard.props";
 
-export default function CarCard({ mark, model, color, type }: CarCardProps) {
+export default function CarCard({ mark, url, model, color }: CarCardProps) {
   return (
+    <div className={styles.card_container}>
     <div className={styles.card}>
       <div>
-        <h3>{mark}</h3>
-        <span>{model}</span>
-        
+        <h3 className={styles.mark}>{mark}</h3>
+        <img src={url} alt="Car Photo" className={styles.car_photo} />
+        <span className={styles.model}>{model}</span>
+        <span className={styles.color}>, {color}</span>
       </div>
 
-      {/* <img></img> */}
+    </div>
     </div>
   );
 }
