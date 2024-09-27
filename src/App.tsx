@@ -1,4 +1,5 @@
 import "./App.scss";
+import CarCard from "./components/UI/cards/CarCard/CarCard";
 
 function App() {
   return (
@@ -9,7 +10,12 @@ function App() {
       </div>
 
       <div className="cars_block">
-        <div className="car_card"></div>
+        <CarCard
+          mark={"Reno"}
+          model={"Astra"}
+          color={"Black"}
+          type={"test"}
+        ></CarCard>
       </div>
     </div>
   );
