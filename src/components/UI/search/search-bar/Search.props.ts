@@ -1,3 +1,4 @@
 export interface SearchProp {
-    searchName: string | null;
+  searchName: string;
+  onSearch: (query: string) => void;
 }

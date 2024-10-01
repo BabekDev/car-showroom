@@ -1,14 +1,20 @@
 import TextField from "@mui/material/TextField/TextField";
 import { SearchProp } from "./Search.props";
 import styles from "./Search.module.scss";
-import Button from "@mui/material/Button/Button";
+import { ChangeEvent } from "react";
 
-export default function Search({ searchName }: SearchProp) {
+export default function Search({ searchName, onSearch }: SearchProp) {
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    onSearch(e.target.value);
+  };
+
   return (
     <div className={styles.search_line}>
       <TextField
         id="outlined-basic"
         label="Search"
+        value={searchName}
+        onChange={handleInputChange}
         variant="outlined"
         className={styles.search_field}
         sx={{
@@ -21,7 +27,7 @@ export default function Search({ searchName }: SearchProp) {
               borderColor: "lightgray",
             },
             "&:hover fieldset": {
-                borderColor: "lightgray",
+              borderColor: "lightgray",
             },
           },
           "& .MuiInputLabel-root": {
@@ -36,31 +42,6 @@ export default function Search({ searchName }: SearchProp) {
           },
         }}
       />
-      <Button
-        variant="outlined"
-        sx={{
-          color: "white",
-          borderColor: "lightgray",
-          borderRadius: "14px",
-          padding: "14px",
-          border: "0px",
-          
-          "&:hover": {
-            borderColor: "lightgray",
-            backgroundColor: '#2d2e2e'
-          },
-          "&:focused": {
-            borderColor: "lightgray",
-          },
-          "&:active": {
-            borderColor: "white",
-          },
-        }}
-        className={styles.btn}
-      >
-        Search
-      </Button>
-      <h3>{searchName}</h3>
     </div>
   );
 }
