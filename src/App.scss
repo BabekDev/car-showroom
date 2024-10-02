@@ -17,4 +17,15 @@
     gap: 40px;
     margin-top: 0px;
   }
+  .modal {
+    .modal_content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100px;
+      
+    }
+    
+  }
 }

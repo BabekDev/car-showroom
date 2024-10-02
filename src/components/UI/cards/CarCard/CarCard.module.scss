@@ -1,17 +1,22 @@
 $card-width: 330px;
-$max-card-height: 200px;
+$min-card-height: 330px;
+$max-photo-height: 200px;
 
 .card {
   background-color: #353535;
   border-radius: 5px;
   padding: 1px 0px;
   width: $card-width;
-  min-height: $max-card-height;
+  min-height: $min-card-height;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  .car_photo {
+    width: 100%;
+    display: flex;
+    max-height: $max-photo-height;
+  }
   .footer {
     width: 100%;
     display: flex;

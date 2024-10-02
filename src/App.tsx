@@ -2,11 +2,12 @@ import "./App.scss";
 import CarCard from "./components/UI/cards/CarCard/CarCard";
 import Search from "./components/UI/search/search-bar/Search";
 import Filter from "./components/UI/filter/filter-bar/Filter";
-import AddCarCard from "./components/UI/add-cards/add-cads-cars/AddCarCard";
 import { CarData } from "./data/car.data";
 import { useMemo, useState } from "react";
 import { CarType } from "./types/car.type";
 import { Button } from "@mui/material";
+import { Modal } from "./components/Modal/modal";
+
 
 const newCar: CarType = {
   mark: "Lanos",
@@ -25,6 +26,10 @@ function App() {
     setCars((prevCars) => [...prevCars, newCar]);
   };
 
+
+  const [modalActive, setModalActive] = useState(false);
+
+
   const filteredCars = cars.filter(
     (car) =>
       car.mark.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -37,14 +42,14 @@ function App() {
     <div className="App">
       <div className="header">
         <Search searchName={searchQuery} onSearch={setSearchQuery} />
-
         <Filter
           filterMark="Opel"
           filterModel="Astra"
           filterColor="Black"
         ></Filter>
-        {/* <AddCarCard /> */}
-
+        <Modal active={modalActive} setActive={setModalActive} />
+        
+        <Button onClick={()=> setModalActive(true)}>Add Your Car</Button>
         <Button onClick={createNewCar}>Create New Car</Button>
         <div className="fillter_block"></div>
       </div>
