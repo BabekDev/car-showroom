@@ -22,4 +22,11 @@ export const CarData: CarType[] = [
     color: "White",
     price: 8000,
   },
+  {
+    mark: "Toyota",
+    url: " ",
+    model: "X",
+    color: "white",
+    price: 11000,
+  }
 ];

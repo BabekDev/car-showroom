@@ -1,18 +1,22 @@
-import { useState } from "react";
-import { FormControl, InputLabel, Select, MenuItem, Button } from "@mui/material";
+import {
+  FormControl,
+  InputLabel,
+  Select,
+  MenuItem,
+  Button,
+} from "@mui/material";
 import styles from "./Filter.module.scss";
 import { FilterProps } from "./Filter.props";
 
 export default function Filter({
-  initialMark,
-  initialModel,
-  initialColor,
+  filterMark,
+  setFilterMark,
+  filterModel,
+  setFilterModel,
+  filterColor,
+  setFilterColor,
 }: FilterProps) {
 
-
-  const [filterMark, setFilterMark] = useState(initialMark || "");
-  const [filterModel, setFilterModel] = useState(initialModel || "");
-  const [filterColor, setFilterColor] = useState(initialColor || "");
 
   return (
     <div className={styles.filter_line}>
@@ -23,7 +27,7 @@ export default function Filter({
         <Select
           labelId="mark-select-label"
           id="mark-select"
-          value={filterMark}
+          value={filterMark || ''}
           onChange={(event) => setFilterMark(event.target.value)}
           label="Mark"
           sx={{
@@ -68,9 +72,9 @@ export default function Filter({
             },
           }}
         >
-          <MenuItem value="Renault">Renault</MenuItem>
+          <MenuItem value="Lanos">Lanos</MenuItem>
           <MenuItem value="Opel">Opel</MenuItem>
-          <MenuItem value="BMW">BMW</MenuItem>
+          <MenuItem value="Tesla">Tesla</MenuItem>
         </Select>
       </FormControl>
 
@@ -81,7 +85,7 @@ export default function Filter({
         <Select
           labelId="model-select-label"
           id="model-select"
-          value={filterModel}
+          value={filterModel || ''}
           onChange={(event) => setFilterModel(event.target.value)}
           label="Model"
           sx={{
@@ -126,10 +130,9 @@ export default function Filter({
             },
           }}
         >
-          <MenuItem value="M3">M3</MenuItem>
-          <MenuItem value="M4">M4</MenuItem>
-          <MenuItem value="M5">M5</MenuItem>
-          <MenuItem value="M6">M6</MenuItem>
+          <MenuItem value="Corolla">Corolla</MenuItem>
+          <MenuItem value="Astra">Astra</MenuItem>
+          <MenuItem value="Model X">Model X</MenuItem>
         </Select>
       </FormControl>
 
@@ -140,7 +143,7 @@ export default function Filter({
         <Select
           labelId="color-select-label"
           id="color-select"
-          value={filterColor}
+          value={filterColor || ''}
           onChange={(event) => setFilterColor(event.target.value)}
           label="Color"
           sx={{
