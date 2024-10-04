@@ -3,7 +3,7 @@ import styles from "./CarCard.module.scss";
 
 export default function CarCard({ mark, url, model, color, price }: CarType) {
   return (
-    <div className={styles.card_container}>
+    <>
       <div className={styles.card}>
         <h3 className={styles.mark}>{mark}</h3>
         <img src={url} alt="Car Photo" className={styles.car_photo} />
@@ -18,6 +18,6 @@ export default function CarCard({ mark, url, model, color, price }: CarType) {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

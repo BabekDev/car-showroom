@@ -1,9 +1,46 @@
 .header_block {
   max-width: 1440px;
   width: 100%;
-  height: 60px;
+  height: 75px;
   margin: 0px auto;
-  background: pink;
-  text-align: center;
   color: black;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #303030;
+
+  .left_block,
+  .right_block {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding: 0px 10px;
+  }
+
+  .left_block {
+    .logo_block {
+      display: flex;
+      justify-content: center;
+      .logo {
+        width: auto;
+        height: 40px;
+      }
+    }
+  }
+
+  .right_block {
+    justify-content: right;
+
+    .log_in_btn {
+      margin-right: 12px;
+      color: #ecda19;
+      border: 1px solid #ecda19;
+    }
+
+    .sign_in_btn {
+      min-width: 110px;
+      background: #ecda19;
+      color: #252525;
+    }
+  }
 }

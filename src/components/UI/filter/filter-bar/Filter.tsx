@@ -16,8 +16,6 @@ export default function Filter({
   filterColor,
   setFilterColor,
 }: FilterProps) {
-
-
   return (
     <div className={styles.filter_line}>
       <FormControl fullWidth className={styles.form}>
@@ -27,7 +25,7 @@ export default function Filter({
         <Select
           labelId="mark-select-label"
           id="mark-select"
-          value={filterMark || ''}
+          value={filterMark || ""}
           onChange={(event) => setFilterMark(event.target.value)}
           label="Mark"
           sx={{
@@ -85,7 +83,7 @@ export default function Filter({
         <Select
           labelId="model-select-label"
           id="model-select"
-          value={filterModel || ''}
+          value={filterModel || ""}
           onChange={(event) => setFilterModel(event.target.value)}
           label="Model"
           sx={{
@@ -143,7 +141,7 @@ export default function Filter({
         <Select
           labelId="color-select-label"
           id="color-select"
-          value={filterColor || ''}
+          value={filterColor || ""}
           onChange={(event) => setFilterColor(event.target.value)}
           label="Color"
           sx={{

@@ -8,7 +8,6 @@ import { CarType } from "./types/car.type";
 import { Button } from "@mui/material";
 import { Modal } from "./components/Modal/modal";
 
-
 const newCar: CarType = {
   mark: "Lanos",
   model: "Test",
@@ -16,7 +15,6 @@ const newCar: CarType = {
   url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTML44irshOz46FmYn6BD0QVkOaChRca5YAkA&s",
   price: 20000,
 };
-
 
 function App() {
   const [cars, setCars] = useState<CarType[]>(CarData);
@@ -30,44 +28,48 @@ function App() {
     setCars((prevCars) => [...prevCars, newCar]);
   };
 
-
-  
-
-
   const filteredCars = cars.filter((car) => {
-    const matchMark = filterMark ? car.mark === filterMark: true;
-    const matchModel = filterModel ? car.model === filterModel: true;
-    const matchColor = filterColor ? car.color === filterColor: true;
-    const matchSearch = car.mark.toLocaleLowerCase().includes(searchQuery.toLocaleLowerCase()) ||
-    car.model.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    car.price.toString().includes(searchQuery.toLowerCase()) || 
-    car.color.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchMark = filterMark ? car.mark === filterMark : true;
+    const matchModel = filterModel ? car.model === filterModel : true;
+    const matchColor = filterColor ? car.color === filterColor : true;
+    const matchSearch =
+      car.mark.toLocaleLowerCase().includes(searchQuery.toLocaleLowerCase()) ||
+      car.model.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      car.price.toString().includes(searchQuery.toLowerCase()) ||
+      car.color.toLowerCase().includes(searchQuery.toLowerCase());
 
     return matchMark && matchModel && matchColor && matchSearch;
-  })
+  });
 
   const resetFilters = () => {
     setFilterMark(null);
     setFilterModel(null);
     setFilterColor(null);
-  }
+  };
 
   return (
     <div className="App">
-      <div className="header">
-        <Search searchName={searchQuery} onSearch={setSearchQuery} />
+      <div className="header_content_block">
+        <div className={"left_block"}>
+          <Search searchName={searchQuery} onSearch={setSearchQuery} />
+        </div>
+        <div className={"right_block"}>
+          <div className={"filter_block"}></div>
+          <div className={"setting_block"}></div>
+        </div>
+        {/* <Search searchName={searchQuery} onSearch={setSearchQuery} />
         <Filter
-        filterMark={filterMark}
-        setFilterMark={setFilterMark}
-        filterModel={filterModel}
-        setFilterModel={setFilterModel}
-        filterColor={filterColor}
-        setFilterColor={setFilterColor}></Filter>
+          filterMark={filterMark}
+          setFilterMark={setFilterMark}
+          filterModel={filterModel}
+          setFilterModel={setFilterModel}
+          filterColor={filterColor}
+          setFilterColor={setFilterColor}
+        ></Filter>
         <Modal active={modalActive} setActive={setModalActive} />
         <Button onClick={resetFilters}>Reset</Button>
-        <Button onClick={()=> setModalActive(true)}>Add Your Car</Button>
-        <Button onClick={createNewCar}>Create New Car</Button>
-        <div className="fillter_block"></div>
+        <Button onClick={() => setModalActive(true)}>Add Your Car</Button>
+        <Button onClick={createNewCar}>Create New Car</Button> */}
       </div>
 
       <div className="cars_block">
