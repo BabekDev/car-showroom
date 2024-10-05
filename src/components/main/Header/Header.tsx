@@ -19,7 +19,7 @@ export default function HeaderComponent() {
         </Button>
 
         <Button className={styles.sign_in_btn} variant="contained">
-          Sign In
+          Sign Up
         </Button>
       </div>
     </header>

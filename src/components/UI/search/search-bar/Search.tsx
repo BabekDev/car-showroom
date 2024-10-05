@@ -12,39 +12,11 @@ export default function Search({ searchName, onSearch }: SearchProp) {
 
   return (
     <div className={styles.search_line}>
-      <InputElement />
-      {/* <TextField
-        id="outlined-basic"
-        label="Search"
-        value={searchName}
-        onChange={handleInputChange}
-        variant="outlined"
-        className={styles.search_field}
-        sx={{
-          "& .MuiOutlinedInput-root": {
-            borderRadius: "20px",
-            "& fieldset": {
-              borderColor: "lightgray",
-            },
-            "&.Mui-focused fieldset": {
-              borderColor: "lightgray",
-            },
-            "&:hover fieldset": {
-              borderColor: "lightgray",
-            },
-          },
-          "& .MuiInputLabel-root": {
-            color: "gray",
-            "&.Mui-focused": {
-              color: "#555555",
-            },
-          },
-
-          "& .MuiInputBase-input": {
-            color: "White",
-          },
-        }}
-      /> */}
+      <InputElement 
+      id="outlined-basic"
+      value={searchName}
+      onChange={handleInputChange}
+      className={styles.search_field}/>
     </div>
   );
 }
@@ -68,12 +40,14 @@ const grey = {
   600: "#6B7A90",
   700: "#434D5B",
   800: "#303740",
-  900: "#1C2025",
+  900: "#303030",
 };
+
 
 const InputElement = styled("input")(
   ({ theme }) => `
-  width: 320px;
+  width: 100%;
+  min-height: 30px;
   font-family: 'IBM Plex Sans', sans-serif;
   font-size: 0.875rem;
   font-weight: 400;
